@@ -1,4 +1,4 @@
-# 一些语法相关的笔记
+# 一些语法相关的笔记和处理技巧
 
 ## JAVA
 
@@ -30,5 +30,27 @@ PriorityQueue<Map.Entry<String, Integer>> pq = new PriorityQueue<Map.Entry<Strin
             }
         });
 ```
+
+#### 处理类似"10:20"格式的时间
+
+[leetcode](https://leetcode.cn/problems/alert-using-same-key-card-three-or-more-times-in-a-one-hour-period/solution/jing-gao-yi-xiao-shi-nei-shi-yong-xiang-ioeiw/)
+
+``` java
+// keyName = ["daniel","daniel","daniel","luis","luis","luis","luis"]
+// keyTime = ["10:00","10:40","11:00","09:00","11:00","13:00","15:00"]
+
+Map<String, List<Integer>> timeMap = new HashMap<String, List<Integer>>();
+int n = keyName.length;
+for (int i = 0; i < n; i++) {
+    String name = keyName[i];
+    String time = keyTime[i];
+    timeMap.putIfAbsent(name, new ArrayList<Integer>());
+    // 时间转minute方法
+    int hour = (time.charAt(0) - '0') * 10 + (time.charAt(1) - '0');
+    int minute = (time.charAt(3) - '0') * 10 + (time.charAt(4) - '0');
+    timeMap.get(name).add(hour * 60 + minute);
+}
+```
+
 
 ## C++
