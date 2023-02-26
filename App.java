@@ -3,14 +3,28 @@ import java.util.HashMap;
 import java.util.Stack;
 
 public class App {
-    
+    int lifeTime = 10;
 	public static void main(String[] args) {
 		System.out.println(args); //
+        System.out.println("hello");
 		//System.out.println(args.length);  //默认长度为0
-        String test = new String("{}[]{}()");
-        App app = new App();
-        app.isValid(test);
-        System.out.println(app.isValid(test));
+        //String test = new String("{}[]{}()");
+        //App app = new App();
+        //app.isValid(test);
+        //System.out.println(app.isValid(test));
+       // new App().recursion(0);
+    }
+
+    
+    public void recursion(int i) {
+        if (i < lifeTime) {
+            System.out.print(i + " ");
+            recursion(++i);
+            System.out.print(i + "-");
+        } else {
+            System.out.println();
+            System.out.println("reverse");
+        }
     }
 
     public boolean isValid(String s) {
