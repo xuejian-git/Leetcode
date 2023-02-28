@@ -4,7 +4,7 @@
 
 #### 按照特殊顺序排列数组
 
-``` java
+```java
 // java
 List<String> rec = new ArrayList<String>();
 Collections.sort(rec, new Comparator<String>() {
@@ -14,7 +14,7 @@ Collections.sort(rec, new Comparator<String>() {
 }
 ```
 
-``` c++
+```c++
 // C++
 sort(rec.begin(), rec.end(), [&](const string& a, const string& b) -> bool {
     return cnt[a] == cnt[b] ? a < b : cnt[a] > cnt[b];
@@ -23,7 +23,7 @@ sort(rec.begin(), rec.end(), [&](const string& a, const string& b) -> bool {
 
 #### 特殊规定的PriorityQueue
 
-``` java
+```java
 PriorityQueue<Map.Entry<String, Integer>> pq = new PriorityQueue<Map.Entry<String, Integer>>(new Comparator<Map.Entry<String, Integer>>() {
     public int compare(Map.Entry<String, Integer> entry1, Map.Entry<String, Integer> entry2) {
         eturn entry1.getValue() == entry2.getValue() ? entry2.getKey().compareTo(entry1.getKey()) : entry1.getValue() - entry2.getValue();
@@ -35,7 +35,7 @@ PriorityQueue<Map.Entry<String, Integer>> pq = new PriorityQueue<Map.Entry<Strin
 
 [leetcode](https://leetcode.cn/problems/alert-using-same-key-card-three-or-more-times-in-a-one-hour-period/solution/jing-gao-yi-xiao-shi-nei-shi-yong-xiang-ioeiw/)
 
-``` java
+```java
 // keyName = ["daniel","daniel","daniel","luis","luis","luis","luis"]
 // keyTime = ["10:00","10:40","11:00","09:00","11:00","13:00","15:00"]
 
@@ -52,5 +52,11 @@ for (int i = 0; i < n; i++) {
 }
 ```
 
-
 ## C++
+
+#### 消除报错
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+```
