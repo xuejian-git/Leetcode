@@ -1,3 +1,10 @@
 {
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    "files.associations": {
+        "new": "cpp",
+        "ostream": "cpp",
+        "unordered_map": "cpp",
+        "iostream": "cpp",
+        "vector": "cpp"
+    }
 }
